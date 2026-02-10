@@ -6,7 +6,7 @@ import ProjectsBtn from '../components/ProjectsBtn';
 import Avatar from '../components/Avatar';
 
 import { fadeIn } from '../variants';
-import CvButton from '../components/button';
+import CvButton from '../components/CvButton';
 import PDFViewer from '../components/PDFviewer';
 
 const Home = () => {

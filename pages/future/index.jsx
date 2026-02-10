@@ -1,5 +1,5 @@
 import PDFviewer from '../../components/PDFviewer';
-import CvButton from '../../components/button';
+import CvButton from '../../components/CvButton';
 import { useState } from 'react';
 
 const FuturePage = () => {
