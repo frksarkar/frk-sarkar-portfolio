@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 // icons
-import { HiHome, HiUser, HiViewColumns, HiRectangleGroup, HiChatBubbleBottomCenterText, HiEnvelope } from 'react-icons/hi2';
+import { HiHome, HiUser, HiViewColumns, HiRectangleGroup, HiChatBubbleBottomCenterText, HiEnvelope, HiUserPlus } from 'react-icons/hi2';
 
 // nav data
 export const navData = [
@@ -16,9 +16,9 @@ export const navData = [
 	//     Icon: HiChatBubbleBottomCenterText,
 	//   },
 	{
-		name: 'contact',
+		name: 'Hire Me',
 		path: '/contact',
-		Icon: HiEnvelope,
+		Icon: HiUserPlus,
 	},
 ];
 
@@ -37,7 +37,7 @@ const Nav = () => {
 						{/* tolltip */}
 						<div role="tooltip" className="absolute pr-14 right-0 hidden xl:group-hover:flex">
 							<div className="bg-white relative flex text-primary items-center p-[6px] rounded-[3px]">
-								<div className="text-[12px] leading-none font-semibold capitalize">{link.name}</div>
+								<div className="text-[12px] leading-none font-semibold capitalize whitespace-nowrap">{link.name}</div>
 
 								{/* triangle */}
 								<div className="border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2" aria-hidden />

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { BsArrowRight } from 'react-icons/bs';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -21,7 +20,7 @@ const workSlides = {
 						'A comprehensive e-commerce analytics dashboard built with Next.js 14. It features real-time sales tracking, inventory management, customer analytics, and automated reporting. The dashboard uses WebSocket connections for live updates and includes role-based access control for team members.',
 					techStack: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL', 'Prisma'],
 					liveUrl: 'https://dashboard-demo.vercel.app',
-					githubUrl: 'https://github.com/username/dashboard',
+					githubUrl: 'https://github.com/frksarkar/Elite-Store',
 					image: '/projects/dashboard.jpg',
 					features: ['Real-time analytics with WebSocket', 'Dark/Light mode toggle', 'Responsive data tables', 'Export to PDF/Excel', 'Role-based authentication'],
 				},
@@ -34,7 +33,7 @@ const workSlides = {
 						'A Trello-like task management application featuring drag-and-drop kanban boards, real-time collaboration, and team workspaces. Built with modern React patterns and includes features like due date tracking, file attachments, and activity logs.',
 					techStack: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Docker'],
 					liveUrl: 'https://taskapp-demo.vercel.app',
-					githubUrl: 'https://github.com/username/taskapp',
+					githubUrl: 'https://github.com/frksarkar/Task-Manager',
 					features: ['Drag-and-drop kanban boards', 'Real-time collaboration', 'Team workspaces', 'File attachments', 'Activity tracking'],
 				},
 				{
@@ -46,7 +45,7 @@ const workSlides = {
 						'An AI-powered image generation platform that leverages Stable Diffusion models. Users can create custom images from text prompts, save their favorites, and download high-resolution outputs. Includes a gallery system and prompt history.',
 					techStack: ['Next.js', 'Python', 'FastAPI', 'AWS', 'PostgreSQL'],
 					liveUrl: 'https://ai-image-gen.vercel.app',
-					githubUrl: 'https://github.com/username/ai-image-gen',
+					githubUrl: 'https://github.com/frksarkar/AI-Image-Generator',
 					features: ['Text-to-image generation', 'Prompt history & favorites', 'High-res downloads', 'Gallery management', 'API rate limiting'],
 				},
 				{
@@ -58,7 +57,7 @@ const workSlides = {
 						'powerful analytics dashboard with real-time data visualization and real-time analytics with WebSocket connections for live updates and includes role-based access control for team members.',
 					techStack: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL', 'Prisma'],
 					liveUrl: 'https://dashboard-demo.vercel.app',
-					githubUrl: 'https://github.com/username/dashboard',
+					githubUrl: 'https://github.com/frksarkar/Elite-Store',
 					image: '/projects/dashboard.jpg',
 					features: ['Real-time analytics with WebSocket', 'Dark/Light mode toggle', 'Responsive data tables', 'Export to PDF/Excel', 'Role-based authentication'],
 				},

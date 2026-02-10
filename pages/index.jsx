@@ -1,12 +1,16 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 import ParticlesContainer from '../components/ParticlesContainer';
 import ProjectsBtn from '../components/ProjectsBtn';
 import Avatar from '../components/Avatar';
 
 import { fadeIn } from '../variants';
+import CvButton from '../components/button';
+import PDFViewer from '../components/PDFviewer';
 
 const Home = () => {
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	return (
 		<div className="bg-primary/60 h-full">
 			{/* text */}
@@ -16,12 +20,16 @@ const Home = () => {
 					<motion.h1 variants={fadeIn('down', 0.2)} initial="hidden" animate="show" exit="hidden" className="h1">
 						Full-Stack <br /> Web <span className="text-accent">Developer</span>
 					</motion.h1>
-
 					{/* subtitle */}
 					<motion.p variants={fadeIn('down', 0.3)} initial="hidden" animate="show" exit="hidden" className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16">
 						I build modern, responsive, and user-focused web applications using React, Next.js, and Node.js. Passionate about clean code, performance, and real-world
 						problem solving.
 					</motion.p>
+
+					{/* btn for cv */}
+					<motion.div variants={fadeIn('down', 0.4)} initial="hidden" animate="show" exit="hidden" className="flex justify-center xl:justify-start mb-10 xl:mb-16">
+						<CvButton openModal={() => setIsModalOpen(true)} />
+					</motion.div>
 
 					{/* btn */}
 					<div className="flex justify-center xl:hidden relative">
@@ -56,6 +64,8 @@ const Home = () => {
 					<Avatar />
 				</motion.div>
 			</div>
+			{/* Modal */}
+			<PDFViewer isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
 		</div>
 	);
 };
