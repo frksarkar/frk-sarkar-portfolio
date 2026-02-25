@@ -30,9 +30,9 @@ const Contact = () => {
 	};
 
 	return (
-		<div className="h-full bg-lightPrimary dark:bg-primary/30 transition-colors duration-300">
-			<div className="container mx-auto py-32 flex items-center justify-center h-full">
-				<div className="flex flex-col xl:flex-row w-full gap-x-12 xl:gap-x-24 items-center justify-between mt-8 sm:mt-0">
+		<div className="flex-1 w-full flex flex-col items-center justify-center bg-lightPrimary dark:bg-primary/30 transition-colors duration-300 relative overflow-x-hidden pt-32 pb-16 min-h-screen">
+			<div className="container mx-auto flex flex-col items-center justify-center w-full">
+				<div className="flex flex-col xl:flex-row w-full gap-x-12 xl:gap-x-24 items-center justify-between relative z-10">
 					{/* Left Side: Text and Connect Intro */}
 					<motion.div
 						variants={fadeIn('right', 0.2)}

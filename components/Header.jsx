@@ -7,7 +7,7 @@ import ThemeToggle from '../components/ThemeToggle';
 
 const Header = () => {
 	return (
-		<header className="absolute z-30 w-full flex items-center px-4 sm:px-16 xl:px-0 xl:h-[90px]">
+		<header className="fixed top-0 left-0 z-50 w-full flex items-center px-4 sm:px-16 xl:px-0 xl:h-[90px] bg-lightPrimary/80 dark:bg-[#131424]/80 backdrop-blur-md border-b border-white/5 transition-colors duration-300">
 			<div className="container mx-auto">
 				<div className="flex flex-row justify-between items-center gap-y-4 py-4 sm:py-8">
 					{/* logo */}

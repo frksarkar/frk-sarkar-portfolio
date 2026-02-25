@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
 		<ThemeProvider attribute="class" defaultTheme="dark">
 			<Layout>
 				<AnimatePresence mode="wait">
-					<motion.div key={router.route} className="h-full">
+					<motion.div key={router.route} className="flex-1 w-full min-h-screen flex flex-col">
 						<Transition />
 						<Component {...pageProps} />
 					</motion.div>
