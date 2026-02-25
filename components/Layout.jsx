@@ -12,16 +12,17 @@ const sora = Sora({
 	weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
 });
 
-const Layout = ({ children }) => {
+const Layout = ({
+	children,
+	title = 'frk-sarkar | Portfolio',
+	description = 'Omar Faruk Sarkar is a Full-stack web developer who builds modern, responsive, and user-focused web applications.',
+}) => {
 	return (
 		<main className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
 			{/* metadata */}
 			<Head>
-				<title>frk-sarkar | Portfolio</title>
-				<meta
-					name="description"
-					content="Omar Faruk Sarkar is a Full-stack web developer who builds modern, responsive, and user-focused web applications using React, Next.js, and Node.js. Passionate about clean code, performance, and real-world problem solving."
-				/>
+				<title>{title}</title>
+				<meta name="description" content={description} />
 				<meta name="keywords" content="react, next, nextjs, html, css, javascript, js, modern-ui, modern-ux, portfolio, framer-motion, 3d-website, particle-effect" />
 				<meta name="author" content="Omar Faruk Sarkar" />
 				<meta name="theme-color" content="#f13024" />

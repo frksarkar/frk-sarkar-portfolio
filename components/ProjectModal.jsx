@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { X, ExternalLink, Github, Code2, CheckCircle2, Sparkles, Eye } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ProjectModal({ project, onClose }) {
 	const getTechIcon = (tech) => {
@@ -66,7 +67,7 @@ export default function ProjectModal({ project, onClose }) {
 				{/* Hero Image */}
 				<div className="relative h-64 bg-gradient-to-br from-red-600 via-red-700 to-orange-800 flex-shrink-0 overflow-hidden">
 					{project.image ? (
-						<img src={project.image} alt={project.name} className="w-full h-full object-cover opacity-90" />
+						<Image src={project.image} alt={project.name} fill className="object-cover opacity-90" />
 					) : (
 						<div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1a0a2e] to-[#0f0f23]">
 							<Code2 className="w-24 h-24 text-red-400/80" />
