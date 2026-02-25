@@ -12,16 +12,30 @@ import PDFViewer from '../components/PDFviewer';
 const Home = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	return (
-		<div className="bg-lightPrimary dark:bg-primary/60 h-full transition-colors duration-300">
-			{/* text */}
-			<div className="w-full h-full bg-gradient-to-r from-lightSecondary/60 via-lightPrimary/40 to-lightPrimary/80 dark:from-primary/10 dark:via-black/30 dark:to-black/10 transition-colors duration-300">
-				<div className="text-center flex flex-col justify-center pt-24 xl:pt-40 xl:text-left h-full container mx-auto relative z-20">
+		<div className="flex-1 w-full min-h-screen xl:h-screen flex flex-col bg-lightPrimary dark:bg-primary/60 transition-colors duration-300 relative overflow-x-hidden xl:overflow-hidden">
+			{/* background gradient wrap */}
+			<div className="flex-1 w-full flex flex-col bg-gradient-to-r from-lightSecondary/60 via-lightPrimary/40 to-lightPrimary/80 dark:from-primary/10 dark:via-black/30 dark:to-black/10 transition-colors duration-300">
+				{/* text content container */}
+				<div className="container mx-auto flex-1 flex flex-col justify-center items-center xl:items-start text-center xl:text-left relative z-20 pt-24 pb-16 xl:pt-40">
 					{/* title */}
-					<motion.h1 variants={fadeIn('down', 0.2)} initial="hidden" animate="show" exit="hidden" className="h1">
-						Full-Stack <br /> Web <span className="text-accent">Developer</span>
+					<motion.h1
+						variants={fadeIn('down', 0.2)}
+						initial="hidden"
+						animate="show"
+						exit="hidden"
+						className="text-[40px] leading-[1.1] md:text-[60px] md:leading-[1.2] font-semibold text-white mb-6"
+					>
+						Full-Stack <br /> Web{' '}
+						<span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">Developer</span>
 					</motion.h1>
 					{/* subtitle */}
-					<motion.p variants={fadeIn('down', 0.3)} initial="hidden" animate="show" exit="hidden" className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16">
+					<motion.p
+						variants={fadeIn('down', 0.3)}
+						initial="hidden"
+						animate="show"
+						exit="hidden"
+						className="max-w-sm xl:max-w-xl text-gray-300/80 mb-10 xl:mb-16 leading-relaxed"
+					>
 						I build modern, responsive, and user-focused web applications using React, Next.js, and Node.js. Passionate about clean code, performance, and real-world
 						problem solving.
 					</motion.p>
@@ -32,7 +46,7 @@ const Home = () => {
 					</motion.div>
 
 					{/* btn */}
-					<div className="flex justify-center xl:hidden relative">
+					<div className="flex justify-center xl:hidden relative mb-12">
 						<ProjectsBtn />
 					</div>
 					<motion.div variants={fadeIn('down', 0.4)} initial="hidden" animate="show" exit="hidden" className="hidden xl:flex">
@@ -59,7 +73,7 @@ const Home = () => {
 					animate="show"
 					exit="hidden"
 					transition={{ duration: 0.6, ease: 'easeInOut' }}
-					className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%]"
+					className="w-full h-full max-w-[737px] max-h-[678px] absolute bottom-0 lg:right-[8%]"
 				>
 					<Avatar />
 				</motion.div>

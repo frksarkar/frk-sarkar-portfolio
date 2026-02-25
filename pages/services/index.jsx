@@ -10,7 +10,7 @@ export const serviceData = [];
 
 const Services = () => {
 	return (
-		<div className="min-h-screen bg-lightPrimary dark:bg-primary/30 py-36 flex items-center transition-colors duration-300 relative overflow-x-hidden">
+		<div className="h-screen bg-lightPrimary dark:bg-primary/30 py-36 flex items-center transition-colors duration-300 relative overflow-hidden">
 			<Circles />
 
 			{/* Ambient background glow */}
