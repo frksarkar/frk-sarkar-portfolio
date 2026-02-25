@@ -116,11 +116,10 @@ const About = () => {
 						initial="hidden"
 						animate="show"
 						exit="hidden"
-						className="text-[40px] leading-tight md:text-[54px] md:leading-[1.2] font-bold text-white mb-6"
+						className="text-[40px] leading-tight md:text-[54px] md:leading-[1.2] font-bold text-slate-900 dark:text-white mb-6"
 					>
-						Building fast <br />
-						<span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">modern</span> and scalable{' '}
-						<br /> web applications.
+						Captivating <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">stories</span>{' '}
+						birth magnificent designs.
 					</motion.h2>
 
 					<motion.p
@@ -189,8 +188,8 @@ const About = () => {
 								onClick={() => setIndex(itemI)}
 								className={`relative px-5 py-2.5 rounded-xl capitalize font-medium transition-all duration-300 overflow-hidden ${
 									index === itemI
-										? 'text-white bg-sky-500/20 dark:bg-red-500/20 border border-sky-400/50 dark:border-red-500/50 shadow-[0_0_15px_rgba(14,165,233,0.2)] dark:shadow-[0_0_15px_rgba(239,68,68,0.2)]'
-										: 'text-gray-400 bg-white/5 border border-white/5 hover:bg-white/10 hover:text-white'
+										? 'text-sky-600 dark:text-white bg-sky-500/10 dark:bg-red-500/20 border border-sky-400/50 dark:border-red-500/50 shadow-[0_0_15px_rgba(14,165,233,0.1)] dark:shadow-[0_0_15px_rgba(239,68,68,0.2)]'
+										: 'text-slate-600 dark:text-gray-400 bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 hover:bg-black/10 hover:dark:bg-white/10 hover:text-slate-900 dark:hover:text-white'
 								}`}
 							>
 								{item.title}
@@ -222,11 +221,11 @@ const About = () => {
 								{aboutData[index].info.map((item, itemI) => (
 									<div
 										key={itemI}
-										className="group relative flex flex-col md:flex-row gap-y-2 md:gap-y-0 justify-between items-start md:items-center text-white/80 p-4 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10 transition-colors duration-300"
+										className="group relative flex flex-col md:flex-row gap-y-2 md:gap-y-0 justify-between items-start md:items-center text-slate-700 dark:text-white/80 p-4 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 border border-transparent hover:border-black/10 dark:hover:border-white/10 transition-colors duration-300"
 									>
-										{/* title */}
-										<div className="font-semibold text-gray-200 group-hover:text-white transition-colors flex items-center gap-3">
-											<div className="w-2 h-2 rounded-full bg-sky-400 dark:bg-red-500" />
+										{/* title & description */}
+										<div className="font-semibold text-slate-800 dark:text-gray-200 group-hover:text-sky-600 dark:group-hover:text-white transition-colors flex items-center gap-3">
+											<span className="w-2 h-2 rounded-full bg-sky-500 dark:bg-red-500 group-hover:scale-150 transition-transform" />
 											{item.title}
 										</div>
 

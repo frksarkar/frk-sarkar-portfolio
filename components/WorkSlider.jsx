@@ -116,7 +116,7 @@ const WorkSlider = ({ handleCardClick }) => {
 													${
 														clickedId === image.id
 															? 'bg-white text-sky-600 dark:text-red-500 px-8 py-3 rounded-full translate-y-0 scale-95 shadow-lg shadow-white/20'
-															: 'text-white bg-black/30 px-6 py-3 rounded-full hover:bg-black/50 translate-y-8 group-hover:translate-y-0'
+															: 'text-slate-900 dark:text-white bg-black/10 dark:bg-black/30 px-6 py-3 rounded-full hover:bg-black/50 translate-y-8 group-hover:translate-y-0'
 													}`}
 											>
 												{clickedId === image.id ? (

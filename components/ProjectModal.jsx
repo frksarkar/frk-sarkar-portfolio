@@ -93,7 +93,7 @@ export default function ProjectModal({ project, onClose }) {
 					{/* Title Overlay */}
 					<div className="absolute bottom-0 left-0 right-0 p-6">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-							<h2 className="text-3xl font-bold text-white mb-2 flex items-center gap-2">
+							<h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
 								{project.name}
 								<Sparkles className="w-6 h-6 text-sky-400 dark:text-red-400 animate-pulse" />
 							</h2>
@@ -105,7 +105,7 @@ export default function ProjectModal({ project, onClose }) {
 				<div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-sky-400 dark:scrollbar-thumb-red-500 scrollbar-track-transparent hover:scrollbar-thumb-sky-300 dark:hover:scrollbar-thumb-red-400 scrollbar-thumb-rounded-full p-6 space-y-6 relative z-10 transition-colors duration-300">
 					{/* Description */}
 					<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-						<h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+						<h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
 							<span className="w-1 h-6 bg-gradient-to-b from-sky-400 dark:from-red-500 to-sky-200 dark:to-orange-500 rounded-full" />
 							About Project
 						</h3>
@@ -115,7 +115,7 @@ export default function ProjectModal({ project, onClose }) {
 					{/* Features */}
 					{project.features && project.features.length > 0 && (
 						<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-							<h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+							<h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
 								<span className="w-1 h-6 bg-gradient-to-b from-sky-300 dark:from-orange-500 to-sky-500 dark:to-red-500 rounded-full" />
 								Key Features
 							</h3>
@@ -138,7 +138,7 @@ export default function ProjectModal({ project, onClose }) {
 
 					{/* Tech Stack */}
 					<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-						<h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+						<h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
 							<span className="w-1 h-6 bg-gradient-to-b from-sky-400 dark:from-red-500 to-sky-600 dark:to-pink-500 rounded-full" />
 							Tech Stack
 						</h3>
@@ -203,7 +203,7 @@ export default function ProjectModal({ project, onClose }) {
 								href={project.githubUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#082f49] hover:bg-[#0284c7] dark:bg-[#1a1a2e] dark:hover:bg-[#2a2a3e] text-white rounded-xl font-medium transition-all duration-200 hover:-translate-y-1 border border-sky-400/20 dark:border-red-500/30 shadow-lg"
+								className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 dark:bg-[#1a1a2e] dark:hover:bg-[#2a2a3e] text-white rounded-xl font-medium transition-all duration-200 hover:-translate-y-1 border border-sky-400/20 dark:border-red-500/30 shadow-lg"
 							>
 								<Github className="w-5 h-5" />
 								<span>Source Code</span>

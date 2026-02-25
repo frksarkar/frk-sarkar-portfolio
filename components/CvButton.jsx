@@ -60,7 +60,7 @@ const CvButton = ({ openModal }) => {
 					className={`group relative inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-full transition-all duration-300 shadow-lg overflow-hidden cursor-pointer ${
 						isDownloaded
 							? 'bg-emerald-500 text-white border-2 border-emerald-500 shadow-emerald-500/30'
-							: 'bg-transparent text-white border-2 border-red-500 hover:bg-red-500 hover:-translate-y-1 hover:shadow-red-500/30'
+							: 'bg-transparent text-red-500 dark:text-white border-2 border-red-500 hover:bg-red-500 hover:text-white hover:-translate-y-1 hover:shadow-red-500/30'
 					}`}
 				>
 					{isDownloaded ? (

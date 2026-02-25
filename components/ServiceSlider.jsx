@@ -78,7 +78,7 @@ const ServiceSlider = () => {
 
 						{/* Bottom section: Title & Description */}
 						<div className="flex flex-col mt-auto">
-							<h3 className="text-xl font-bold text-white mb-3 group-hover:text-sky-300 dark:group-hover:text-red-300 transition-colors duration-300">
+							<h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-sky-600 dark:group-hover:text-red-300 transition-colors duration-300">
 								{item.title}
 							</h3>
 							<p className="text-sm leading-relaxed text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{item.description}</p>

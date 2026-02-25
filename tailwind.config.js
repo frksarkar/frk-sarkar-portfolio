@@ -26,11 +26,12 @@ module.exports = {
 				primary: '#131424',
 				secondary: '#393A47',
 				accent: '#F13024',
-				lightPrimary: '#082f49', // Deep ocean blue
-				lightSecondary: '#0c4a6e', // Lighter ocean blue
+				lightPrimary: '#ffffff', // pristine white
+				lightSecondary: '#f1f5f9', // slate-100
 			},
 			backgroundImage: {
 				explosion: 'url("/bg-explosion.png")',
+				explosionWhite: 'url("/bg-explosion-white.png")',
 				circles: 'url("/bg-circles.png")',
 				circleStar: 'url("/circle-star.svg")',
 				site: 'url("/site-bg.svg")',

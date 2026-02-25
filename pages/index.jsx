@@ -23,7 +23,7 @@ const Home = () => {
 						initial="hidden"
 						animate="show"
 						exit="hidden"
-						className="text-[40px] leading-[1.1] md:text-[60px] md:leading-[1.2] font-semibold text-white mb-6"
+						className="text-[40px] leading-[1.1] md:text-[60px] md:leading-[1.2] font-semibold text-slate-900 dark:text-white mb-6"
 					>
 						Full-Stack <br /> Web{' '}
 						<span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">Developer</span>
@@ -59,7 +59,7 @@ const Home = () => {
 				{/* bg img */}
 				<div
 					role="img"
-					className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute dark:mix-blend-color-dodge translate-z-0 opacity-20 dark:opacity-100 transition-opacity duration-300"
+					className="bg-none xl:bg-explosionWhite dark:xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-multiply dark:mix-blend-color-dodge translate-z-0 opacity-50 dark:opacity-100 transition-opacity duration-300"
 					aria-hidden
 				/>
 

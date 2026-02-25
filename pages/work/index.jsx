@@ -19,12 +19,14 @@ const Work = () => {
 	};
 
 	return (
-		<div className="min-h-screen xl:h-screen bg-lightPrimary dark:bg-primary/30 py-36 flex items-center transition-colors duration-300 relative overflow-x-hidden xl:overflow-hidden">
+		<div className="min-h-screen xl:h-screen bg-lightPrimary dark:bg-primary/30 py-36 flex items-center transition-colors duration-300 relative">
 			<Circles />
 
 			{/* Ambient background glow */}
-			<div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-sky-500/10 dark:bg-red-500/10 rounded-full blur-[120px] pointer-events-none" />
-			<div className="absolute bottom-1/4 -left-1/4 w-[400px] h-[400px] bg-blue-500/10 dark:bg-orange-500/10 rounded-full blur-[100px] pointer-events-none" />
+			<div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+				<div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-sky-500/10 dark:bg-red-500/10 rounded-full blur-[120px]" />
+				<div className="absolute bottom-1/4 -left-1/4 w-[400px] h-[400px] bg-blue-500/10 dark:bg-orange-500/10 rounded-full blur-[100px]" />
+			</div>
 
 			<div className="container mx-auto relative z-10">
 				<div className="flex flex-col xl:flex-row gap-x-12 items-center">
@@ -49,7 +51,7 @@ const Work = () => {
 							initial="hidden"
 							animate="show"
 							exit="hidden"
-							className="text-[40px] leading-tight md:text-[54px] md:leading-[1.2] font-bold text-white mb-6 xl:mt-8"
+							className="text-[40px] leading-tight md:text-[54px] md:leading-[1.2] font-bold text-slate-900 dark:text-white mb-6 xl:mt-8"
 						>
 							My <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">Projects</span>.
 						</motion.h2>

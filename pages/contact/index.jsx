@@ -1,32 +1,48 @@
 import { motion } from 'framer-motion';
-import { Send, User, Mail, MessageSquare, Briefcase } from 'lucide-react';
+import { Send, User, Mail, MessageSquare, Briefcase, FileText, Loader2, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import { fadeIn } from '../../variants';
 
 const Contact = () => {
-	const [isLoading, setIsLoading] = useState(false);
-	const [focusedInput, setFocusedInput] = useState(null);
+	const [status, setStatus] = useState({
+		submitting: false,
+		info: { error: false, msg: null },
+	});
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		subject: '',
+		message: '',
+	});
+
+	const handleChange = (e) => {
+		setFormData((prev) => ({
+			...prev,
+			[e.target.name]: e.target.value,
+		}));
+	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		setIsLoading(true);
+		setStatus({ ...status, submitting: true });
 
 		const myForm = event.target;
-		const formData = new FormData(myForm);
+		const submitData = new FormData(myForm);
 
 		fetch('/__forms.html', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: new URLSearchParams(formData).toString(),
+			body: new URLSearchParams(submitData).toString(),
 		})
 			.then((res) => {
 				if (res.status === 200) {
 					alert('Message sent successfully! I will get back to you soon.');
 					myForm.reset();
+					setFormData({ name: '', email: '', subject: '', message: '' });
 				}
 			})
 			.catch((error) => console.log(error))
-			.finally(() => setIsLoading(false));
+			.finally(() => setStatus({ ...status, submitting: false }));
 	};
 
 	return (
@@ -46,10 +62,9 @@ const Contact = () => {
 							<span className="text-sky-500 dark:text-red-500 font-medium tracking-wider uppercase text-sm">Say Hello</span>
 						</div>
 
-						<h2 className="text-[40px] leading-tight md:text-[54px] md:leading-[1.2] font-bold text-white mb-6">
-							Let's build something{' '}
-							<span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">beautiful</span>{' '}
-							together.
+						<h2 className="text-[40px] leading-tight md:text-[54px] md:leading-[1.2] font-bold text-slate-900 dark:text-white mb-6">
+							Let's{' '}
+							<span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">connect.</span>{' '}
 						</h2>
 
 						<p className="text-gray-300/80 leading-relaxed font-light text-lg mb-8">
@@ -87,110 +102,97 @@ const Contact = () => {
 							<input type="hidden" name="form-name" value="contact" />
 
 							<div className="flex flex-col sm:flex-row gap-6 w-full">
-								{/* Name Input */}
-								<div className="relative w-full group">
-									<div
-										className={`absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors duration-300 ${focusedInput === 'name' ? 'text-sky-400 dark:text-red-400' : 'text-gray-400'}`}
-									>
-										<User className="w-5 h-5" />
+								{/* Full Name Input */}
+								<div className="relative group/input w-full">
+									<div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+										<User className="w-5 h-5 text-gray-500 group-focus-within/input:text-sky-500 dark:group-focus-within/input:text-red-500 transition-colors" />
 									</div>
 									<input
 										type="text"
 										name="name"
-										placeholder="Full Name"
-										onFocus={() => setFocusedInput('name')}
-										onBlur={() => setFocusedInput(null)}
-										className="w-full h-14 bg-[#082f49]/30 dark:bg-black/30 border border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-gray-500"
+										value={formData.name}
+										onChange={handleChange}
+										placeholder="Full Name *"
 										required
+										className="w-full h-14 bg-white/50 dark:bg-black/30 border border-black/10 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500"
 									/>
 								</div>
 
 								{/* Email Input */}
-								<div className="relative w-full group">
-									<div
-										className={`absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors duration-300 ${focusedInput === 'email' ? 'text-sky-400 dark:text-red-400' : 'text-gray-400'}`}
-									>
-										<Mail className="w-5 h-5" />
+								<div className="relative group/input w-full">
+									<div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+										<Mail className="w-5 h-5 text-gray-500 group-focus-within/input:text-sky-500 dark:group-focus-within/input:text-red-500 transition-colors" />
 									</div>
 									<input
 										type="email"
 										name="email"
-										placeholder="Email Address"
-										onFocus={() => setFocusedInput('email')}
-										onBlur={() => setFocusedInput(null)}
-										className="w-full h-14 bg-[#082f49]/30 dark:bg-black/30 border border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-gray-500"
+										value={formData.email}
+										onChange={handleChange}
+										placeholder="Email Address *"
 										required
+										className="w-full h-14 bg-white/50 dark:bg-black/30 border border-black/10 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500"
 									/>
 								</div>
 							</div>
 
 							{/* Subject Input */}
-							<div className="relative w-full group">
-								<div
-									className={`absolute inset-y-0 left-4 flex items-center pointer-events-none transition-colors duration-300 ${focusedInput === 'subject' ? 'text-sky-400 dark:text-red-400' : 'text-gray-400'}`}
-								>
-									<Briefcase className="w-5 h-5" />
+							<div className="relative group/input">
+								<div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+									<FileText className="w-5 h-5 text-gray-500 group-focus-within/input:text-sky-500 dark:group-focus-within/input:text-red-500 transition-colors" />
 								</div>
 								<input
 									type="text"
 									name="subject"
-									placeholder="Project Subject"
-									onFocus={() => setFocusedInput('subject')}
-									onBlur={() => setFocusedInput(null)}
-									className="w-full h-14 bg-[#082f49]/30 dark:bg-black/30 border border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-gray-500"
-									required
+									value={formData.subject}
+									onChange={handleChange}
+									placeholder="Subject (Optional)"
+									className="w-full h-14 bg-white/50 dark:bg-black/30 border border-black/10 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500"
 								/>
 							</div>
 
-							{/* Message Input */}
-							<div className="relative w-full group">
-								<div
-									className={`absolute top-4 left-4 pointer-events-none transition-colors duration-300 ${focusedInput === 'message' ? 'text-sky-400 dark:text-red-400' : 'text-gray-400'}`}
-								>
-									<MessageSquare className="w-5 h-5" />
+							{/* Message Textarea */}
+							<div className="relative group/input">
+								<div className="absolute top-4 left-0 pl-4 pointer-events-none">
+									<MessageSquare className="w-5 h-5 text-gray-500 group-focus-within/input:text-sky-500 dark:group-focus-within/input:text-red-500 transition-colors" />
 								</div>
 								<textarea
 									name="message"
+									value={formData.message}
+									onChange={handleChange}
 									placeholder="Tell me about your project..."
-									onFocus={() => setFocusedInput('message')}
-									onBlur={() => setFocusedInput(null)}
-									className="w-full h-40 bg-[#082f49]/30 dark:bg-black/30 border border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-white pl-12 pr-4 pt-4 rounded-xl outline-none transition-all duration-300 placeholder:text-gray-500 resize-none"
 									required
-								/>
+									className="w-full h-40 bg-white/50 dark:bg-black/30 border border-black/10 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 pt-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500 resize-none"
+								></textarea>
 							</div>
 
 							{/* Submit Button */}
 							<button
 								type="submit"
-								disabled={isLoading}
-								className="group relative flex items-center justify-center gap-3 w-full h-14 mt-2 bg-white text-gray-900 font-bold rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] disabled:opacity-70 disabled:hover:scale-100"
+								disabled={status.submitting}
+								className="group relative w-full h-14 bg-sky-500 hover:bg-sky-600 dark:bg-red-600 dark:hover:bg-red-700 text-white rounded-xl font-medium transition-all duration-300 overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed shadow-[0_4px_20px_-5px_rgba(14,165,233,0.5)] dark:shadow-[0_4px_20px_-5px_rgba(239,68,68,0.5)]"
 							>
-								{/* Button hover gradient */}
-								<div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-500 dark:to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
+								<span className="relative z-10 flex items-center justify-center gap-2 group-hover:text-white">
+									{status.submitting ? (
+										<Loader2 className="animate-spin h-5 w-5 text-white" />
+									) : (
+										<>
+											Send Message
+											<Send className="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" />
+										</>
+									)}
+								</span>
+							</button>
 
-								{isLoading ? (
-									<span className="relative z-10 flex items-center gap-2 group-hover:text-white">
-										<svg
-											className="animate-spin h-5 w-5 text-gray-900 group-hover:text-white"
-											xmlns="http://www.w3.org/2000/svg"
-											fill="none"
-											viewBox="0 0 24 24"
-										>
-											<circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-											<path
-												className="opacity-75"
-												fill="currentColor"
-												d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-											></path>
-										</svg>
-										Sending...
-									</span>
-								) : (
-									<span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300">
-										Send Message
-										<Send className="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" />
-									</span>
-								)}
+							{/* WhatsApp Button */}
+							<button
+								type="button"
+								onClick={() => window.open('https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE', '_blank')}
+								className="group relative w-full sm:w-auto h-14 px-8 bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/50 rounded-xl font-medium transition-all duration-300 overflow-hidden flex items-center justify-center"
+							>
+								<span className="relative z-10 flex items-center gap-2 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-300">
+									<MessageCircle className="w-5 h-5 text-[#25D366]" />
+									<span className="text-[#25D366]">Chat on WhatsApp</span>
+								</span>
 							</button>
 						</form>
 					</motion.div>

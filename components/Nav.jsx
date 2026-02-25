@@ -36,7 +36,7 @@ const Nav = () => {
 					>
 						{/* tooltip */}
 						<div role="tooltip" className="absolute pr-14 right-0 hidden xl:group-hover:flex">
-							<div className="bg-white relative flex text-primary items-center p-[6px] rounded-[3px]">
+							<div className="bg-white relative flex text-primary items-center p-[6px] rounded-[3px] shadow-lg dark:shadow-none">
 								<div className="text-[12px] leading-none font-semibold capitalize whitespace-nowrap">{link.name}</div>
 
 								{/* triangle */}

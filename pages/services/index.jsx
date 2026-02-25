@@ -40,7 +40,7 @@ const Services = () => {
 							initial="hidden"
 							animate="show"
 							exit="hidden"
-							className="text-[40px] leading-tight md:text-[54px] md:leading-[1.2] font-bold text-white mb-6 xl:mt-8"
+							className="text-[40px] leading-tight md:text-[54px] md:leading-[1.2] font-bold text-slate-900 dark:text-white mb-6 xl:mt-8"
 						>
 							My <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">Services</span>.
 						</motion.h2>
