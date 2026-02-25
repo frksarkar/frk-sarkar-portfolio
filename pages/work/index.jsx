@@ -19,7 +19,7 @@ const Work = () => {
 	};
 
 	return (
-		<div className="h-full bg-lightPrimary dark:bg-primary/30 py-36 flex items-center transition-colors duration-300 relative overflow-hidden">
+		<div className="min-h-screen bg-lightPrimary dark:bg-primary/30 py-36 flex items-center transition-colors duration-300 relative overflow-x-hidden">
 			<Circles />
 
 			{/* Ambient background glow */}
