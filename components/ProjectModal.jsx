@@ -29,8 +29,14 @@ export default function ProjectModal({ project, onClose }) {
 
 	return (
 		<div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-			{/* Backdrop - Dark with red tint */}
-			<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose} className="absolute inset-0 bg-[#0a0a1a]/90 backdrop-blur-md" />
+			{/* Backdrop - Light/Dark */}
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
+				onClick={onClose}
+				className="absolute inset-0 bg-white/80 dark:bg-[#0a0a1a]/90 backdrop-blur-md transition-colors duration-300"
+			/>
 
 			{/* Modal Container */}
 			<motion.div
@@ -38,7 +44,7 @@ export default function ProjectModal({ project, onClose }) {
 				animate={{ opacity: 1, scale: 1, y: 0 }}
 				exit={{ opacity: 0, scale: 0.9, y: 20 }}
 				transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-				className="relative w-full max-w-2xl max-h-[90vh] bg-[#0f0f23] rounded-3xl shadow-2xl shadow-red-500/20 overflow-hidden flex flex-col border border-red-500/20"
+				className="relative w-full max-w-2xl max-h-[90vh] bg-[#0c4a6e]/95 dark:bg-[#0f0f23] rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-white/10 dark:border-red-500/20 transition-colors duration-300"
 			>
 				{/* Network Background Effect */}
 				<div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -59,9 +65,9 @@ export default function ProjectModal({ project, onClose }) {
 				{/* Close Button */}
 				<button
 					onClick={onClose}
-					className="absolute top-4 right-4 z-20 p-2 rounded-full bg-[#1a1a2e]/90 backdrop-blur-md hover:bg-red-500/20 transition-all duration-200 hover:rotate-90 border border-red-500/30 hover:border-red-500"
+					className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/40 backdrop-blur-md hover:bg-white/20 transition-all duration-200 hover:rotate-90 border border-white/10"
 				>
-					<X className="w-5 h-5 text-gray-300 hover:text-red-400" />
+					<X className="w-5 h-5 text-gray-200 hover:text-white" />
 				</button>
 
 				{/* Hero Image */}
@@ -87,21 +93,21 @@ export default function ProjectModal({ project, onClose }) {
 					</div>
 				</div>
 
-				<div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-red-500 scrollbar-track-[#1a1a2e] hover:scrollbar-thumb-red-400 scrollbar-thumb-rounded-full p-6 space-y-6 relative z-10">
+				<div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-sky-400 dark:scrollbar-thumb-red-500 scrollbar-track-transparent hover:scrollbar-thumb-sky-300 dark:hover:scrollbar-thumb-red-400 scrollbar-thumb-rounded-full p-6 space-y-6 relative z-10 transition-colors duration-300">
 					{/* Description */}
 					<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
 						<h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-							<span className="w-1 h-6 bg-gradient-to-b from-red-500 to-orange-500 rounded-full" />
+							<span className="w-1 h-6 bg-gradient-to-b from-sky-400 dark:from-red-500 to-sky-200 dark:to-orange-500 rounded-full" />
 							About Project
 						</h3>
-						<p className="text-gray-400 leading-relaxed">{project.fullDescription}</p>
+						<p className="text-white/80 dark:text-gray-400 leading-relaxed">{project.fullDescription}</p>
 					</motion.div>
 
 					{/* Features */}
 					{project.features && project.features.length > 0 && (
 						<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
 							<h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-								<span className="w-1 h-6 bg-gradient-to-b from-orange-500 to-red-500 rounded-full" />
+								<span className="w-1 h-6 bg-gradient-to-b from-sky-300 dark:from-orange-500 to-sky-500 dark:to-red-500 rounded-full" />
 								Key Features
 							</h3>
 							<ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -111,9 +117,9 @@ export default function ProjectModal({ project, onClose }) {
 										initial={{ opacity: 0, x: -10 }}
 										animate={{ opacity: 1, x: 0 }}
 										transition={{ delay: 0.3 + index * 0.05 }}
-										className="flex items-start gap-2 text-gray-400 group"
+										className="flex items-start gap-2 text-white/80 dark:text-gray-400 group"
 									>
-										<CheckCircle2 className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+										<CheckCircle2 className="w-5 h-5 text-sky-400 dark:text-red-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
 										<span className="text-sm group-hover:text-white transition-colors">{feature}</span>
 									</motion.li>
 								))}
@@ -124,7 +130,7 @@ export default function ProjectModal({ project, onClose }) {
 					{/* Tech Stack */}
 					<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
 						<h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-							<span className="w-1 h-6 bg-gradient-to-b from-red-500 to-pink-500 rounded-full" />
+							<span className="w-1 h-6 bg-gradient-to-b from-sky-400 dark:from-red-500 to-sky-600 dark:to-pink-500 rounded-full" />
 							Tech Stack
 						</h3>
 						<div className="flex flex-wrap gap-3">

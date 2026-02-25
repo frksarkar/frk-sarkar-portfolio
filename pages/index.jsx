@@ -12,10 +12,10 @@ import PDFViewer from '../components/PDFviewer';
 const Home = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	return (
-		<div className="bg-primary/60 h-full">
+		<div className="bg-lightPrimary dark:bg-primary/60 h-full transition-colors duration-300">
 			{/* text */}
-			<div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-				<div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+			<div className="w-full h-full bg-gradient-to-r from-lightSecondary/60 via-lightPrimary/40 to-lightPrimary/80 dark:from-primary/10 dark:via-black/30 dark:to-black/10 transition-colors duration-300">
+				<div className="text-center flex flex-col justify-center pt-24 xl:pt-40 xl:text-left h-full container mx-auto relative z-20">
 					{/* title */}
 					<motion.h1 variants={fadeIn('down', 0.2)} initial="hidden" animate="show" exit="hidden" className="h1">
 						Full-Stack <br /> Web <span className="text-accent">Developer</span>
@@ -45,7 +45,7 @@ const Home = () => {
 				{/* bg img */}
 				<div
 					role="img"
-					className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"
+					className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute dark:mix-blend-color-dodge translate-z-0 opacity-20 dark:opacity-100 transition-opacity duration-300"
 					aria-hidden
 				/>
 

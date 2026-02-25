@@ -75,11 +75,11 @@ const WorkSlider = ({ handleCardClick }) => {
 				clickable: true,
 			}}
 			modules={[Pagination]}
-			className="h-[280px] sm:h-[480px]"
+			className="h-[560px] sm:h-[480px]"
 		>
 			{workSlides.slides.map((slide, i) => (
 				<SwiperSlide key={i}>
-					<div className="grid grid-cols-2 grid-rows-2 gap-4">
+					<div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:grid-rows-2 gap-4">
 						{slide.images.map((image, imageI) => (
 							<React.Fragment key={imageI}>
 								<div className="relative rounded-lg overflow-hidden flex items-center justify-center group" key={imageI}>

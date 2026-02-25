@@ -17,7 +17,7 @@ const Work = () => {
 	};
 
 	return (
-		<div className="h-full bg-primary/30 py-36 flex items-center">
+		<div className="h-full bg-white/60 dark:bg-primary/30 py-36 flex items-center transition-colors duration-300">
 			<Circles />
 			<div className="container mx-auto">
 				<div className="flex flex-col xl:flex-row gap-x-8">
