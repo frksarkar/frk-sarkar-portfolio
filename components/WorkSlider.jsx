@@ -89,19 +89,19 @@ const WorkSlider = ({ handleCardClick }) => {
 
 										{/* overlay gradient */}
 										<div
-											className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"
+											className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-300"
 											aria-hidden
 										/>
 
 										{/* name */}
-										<div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+										<div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-150">
 											<button onClick={() => handleCardClick(image)} className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
 												{/* name part 1 */}
 												<div className="delay-100">VIEW</div>
 												{/* name part 2 */}
-												<div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">PROJECT</div>
+												<div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-150 delay-150">PROJECT</div>
 												{/* icon */}
-												<div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+												<div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-150 delay-150">
 													<BsArrowRight aria-hidden />
 												</div>
 											</button>
