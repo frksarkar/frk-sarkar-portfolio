@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { BsArrowRight } from 'react-icons/bs';
 import { Pagination } from 'swiper';
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Loader2 } from 'lucide-react';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -68,6 +69,18 @@ const workSlides = {
 };
 
 const WorkSlider = ({ handleCardClick }) => {
+	const [clickedId, setClickedId] = useState(null);
+
+	const onProjectClick = (image) => {
+		setClickedId(image.id);
+		// Wait for animation to play before opening modal
+		setTimeout(() => {
+			handleCardClick(image);
+			// Reset state shortly after modal opens so it's ready when closed
+			setTimeout(() => setClickedId(null), 500);
+		}, 600);
+	};
+
 	return (
 		<Swiper
 			spaceBetween={10}
@@ -89,21 +102,40 @@ const WorkSlider = ({ handleCardClick }) => {
 
 										{/* overlay gradient */}
 										<div
-											className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-300"
+											className="absolute inset-0 bg-gradient-to-l from-transparent via-[#0ea5e9]/80 to-[#082f49] dark:from-transparent dark:via-[#e838cc]/80 dark:to-[#4a22bd] opacity-0 group-hover:opacity-100 transition-all duration-300"
 											aria-hidden
 										/>
 
 										{/* name */}
-										<div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-150">
-											<button onClick={() => handleCardClick(image)} className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
-												{/* name part 1 */}
-												<div className="delay-100">VIEW</div>
-												{/* name part 2 */}
-												<div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-150 delay-150">PROJECT</div>
-												{/* icon */}
-												<div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-150 delay-150">
-													<BsArrowRight aria-hidden />
-												</div>
+										<div
+											className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${clickedId === image.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+										>
+											<button
+												onClick={() => onProjectClick(image)}
+												className={`flex items-center gap-x-2 text-[14px] md:text-[16px] tracking-[0.2em] font-bold transition-all duration-300 transform 
+													${
+														clickedId === image.id
+															? 'bg-white text-sky-600 dark:text-red-500 px-8 py-3 rounded-full translate-y-0 scale-95 shadow-lg shadow-white/20'
+															: 'text-white bg-black/30 px-6 py-3 rounded-full hover:bg-black/50 translate-y-8 group-hover:translate-y-0'
+													}`}
+											>
+												{clickedId === image.id ? (
+													<>
+														<Loader2 className="w-5 h-5 animate-spin" />
+														<span className="animate-in fade-in zoom-in duration-300">OPENING...</span>
+													</>
+												) : (
+													<>
+														{/* name part 1 */}
+														<div className="delay-100">VIEW</div>
+														{/* name part 2 */}
+														<div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">PROJECT</div>
+														{/* icon */}
+														<div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+															<BsArrowRight aria-hidden />
+														</div>
+													</>
+												)}
 											</button>
 										</div>
 									</div>

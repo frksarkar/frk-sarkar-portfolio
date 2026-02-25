@@ -44,21 +44,30 @@ export default function ProjectModal({ project, onClose }) {
 				animate={{ opacity: 1, scale: 1, y: 0 }}
 				exit={{ opacity: 0, scale: 0.9, y: 20 }}
 				transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-				className="relative w-full max-w-2xl max-h-[90vh] bg-[#0c4a6e]/95 dark:bg-[#0f0f23] rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-white/10 dark:border-red-500/20 transition-colors duration-300"
+				className="relative w-full max-w-2xl max-h-[90vh] bg-[#0c4a6e] dark:bg-[#0f0f23] rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-sky-400/20 dark:border-red-500/20 transition-colors duration-300"
 			>
 				{/* Network Background Effect */}
 				<div className="absolute inset-0 overflow-hidden pointer-events-none">
 					<svg className="absolute top-0 right-0 w-full h-full opacity-20" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
 						<defs>
-							<linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+							<linearGradient id="lineGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
 								<stop offset="0%" stopColor="#ff3333" stopOpacity="0.5" />
 								<stop offset="100%" stopColor="#ff6666" stopOpacity="0.1" />
 							</linearGradient>
+							<linearGradient id="lineGradOcean" x1="0%" y1="0%" x2="100%" y2="100%">
+								<stop offset="0%" stopColor="#38bdf8" stopOpacity="0.5" />
+								<stop offset="100%" stopColor="#7dd3fc" stopOpacity="0.1" />
+							</linearGradient>
 						</defs>
-						<path d="M 100 100 L 300 200 L 500 150 L 700 300" stroke="url(#lineGrad)" strokeWidth="1" fill="none" />
-						<path d="M 200 400 L 400 300 L 600 400 L 800 200" stroke="url(#lineGrad)" strokeWidth="1" fill="none" />
-						<circle cx="300" cy="200" r="3" fill="#ff3333" opacity="0.8" />
-						<circle cx="500" cy="150" r="3" fill="#ff3333" opacity="0.8" />
+						<path d="M 100 100 L 300 200 L 500 150 L 700 300" stroke="url(#lineGradOcean)" className="dark:hidden" strokeWidth="1" fill="none" />
+						<path d="M 200 400 L 400 300 L 600 400 L 800 200" stroke="url(#lineGradOcean)" className="dark:hidden" strokeWidth="1" fill="none" />
+						<circle cx="300" cy="200" r="3" fill="#38bdf8" opacity="0.8" className="dark:hidden" />
+						<circle cx="500" cy="150" r="3" fill="#38bdf8" opacity="0.8" className="dark:hidden" />
+
+						<path d="M 100 100 L 300 200 L 500 150 L 700 300" stroke="url(#lineGradDark)" className="hidden dark:block" strokeWidth="1" fill="none" />
+						<path d="M 200 400 L 400 300 L 600 400 L 800 200" stroke="url(#lineGradDark)" className="hidden dark:block" strokeWidth="1" fill="none" />
+						<circle cx="300" cy="200" r="3" fill="#ff3333" opacity="0.8" className="hidden dark:block" />
+						<circle cx="500" cy="150" r="3" fill="#ff3333" opacity="0.8" className="hidden dark:block" />
 					</svg>
 				</div>
 
@@ -71,22 +80,22 @@ export default function ProjectModal({ project, onClose }) {
 				</button>
 
 				{/* Hero Image */}
-				<div className="relative h-64 bg-gradient-to-br from-red-600 via-red-700 to-orange-800 flex-shrink-0 overflow-hidden">
+				<div className="relative h-64 bg-gradient-to-br from-[#0c4a6e] via-[#0284c7] to-[#082f49] dark:from-red-600 dark:via-red-700 dark:to-orange-800 flex-shrink-0 overflow-hidden transition-colors duration-300">
 					{project.image ? (
 						<Image src={project.image} alt={project.name} fill className="object-cover opacity-90" />
 					) : (
-						<div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1a0a2e] to-[#0f0f23]">
-							<Code2 className="w-24 h-24 text-red-400/80" />
+						<div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#082f49] to-[#0c4a6e] dark:from-[#1a0a2e] dark:to-[#0f0f23]">
+							<Code2 className="w-24 h-24 text-sky-400/80 dark:text-red-400/80" />
 						</div>
 					)}
-					<div className="absolute inset-0 bg-gradient-to-t from-[#0f0f23] via-transparent to-transparent" />
+					<div className="absolute inset-0 bg-gradient-to-t from-[#0c4a6e] dark:from-[#0f0f23] via-transparent to-transparent transition-colors duration-300" />
 
 					{/* Title Overlay */}
 					<div className="absolute bottom-0 left-0 right-0 p-6">
 						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
 							<h2 className="text-3xl font-bold text-white mb-2 flex items-center gap-2">
 								{project.name}
-								<Sparkles className="w-6 h-6 text-red-400 animate-pulse" />
+								<Sparkles className="w-6 h-6 text-sky-400 dark:text-red-400 animate-pulse" />
 							</h2>
 							<p className="text-gray-300 text-lg">{project.shortDescription}</p>
 						</motion.div>
@@ -155,38 +164,38 @@ export default function ProjectModal({ project, onClose }) {
 						initial={{ opacity: 0, y: 10 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.5 }}
-						className="grid grid-cols-3 gap-4 p-4 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-2xl border border-red-500/20"
+						className="grid grid-cols-3 gap-4 p-4 bg-gradient-to-r from-sky-500/10 to-blue-500/10 dark:from-red-500/10 dark:to-orange-500/10 rounded-2xl border border-sky-500/20 dark:border-red-500/20"
 					>
 						<div className="text-center">
-							<div className="text-2xl font-bold text-red-400">100%</div>
+							<div className="text-2xl font-bold text-sky-400 dark:text-red-400">100%</div>
 							<div className="text-xs text-gray-400">Responsive</div>
 						</div>
-						<div className="text-center border-x border-red-500/20">
-							<div className="text-2xl font-bold text-orange-400">A+</div>
+						<div className="text-center border-x border-sky-500/20 dark:border-red-500/20">
+							<div className="text-2xl font-bold text-blue-400 dark:text-orange-400">A+</div>
 							<div className="text-xs text-gray-400">Performance</div>
 						</div>
 						<div className="text-center">
-							<div className="text-2xl font-bold text-red-400">SEO</div>
+							<div className="text-2xl font-bold text-sky-400 dark:text-red-400">SEO</div>
 							<div className="text-xs text-gray-400">Optimized</div>
 						</div>
 					</motion.div>
 
-					{/* Action Buttons */}
+					{/* Actions */}
 					<motion.div
 						initial={{ opacity: 0, y: 10 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.6 }}
-						className="pt-4 pb-2 border-t border-red-500/20 flex flex-wrap gap-4"
+						transition={{ delay: 0.5 }}
+						className="flex gap-4 pt-4 border-t border-sky-400/10 dark:border-red-500/10"
 					>
 						{project.liveUrl && (
 							<a
 								href={project.liveUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-red-500/30 hover:-translate-y-0.5 active:translate-y-0 border border-red-500/50"
+								className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-sky-500 hover:bg-sky-600 dark:bg-red-600 dark:hover:bg-red-700 text-white rounded-xl font-medium transition-all duration-200 hover:-translate-y-1 shadow-lg shadow-sky-500/25 dark:shadow-red-500/25"
 							>
 								<ExternalLink className="w-5 h-5" />
-								View Live
+								<span>Live Demo</span>
 							</a>
 						)}
 						{project.githubUrl && (
@@ -194,10 +203,10 @@ export default function ProjectModal({ project, onClose }) {
 								href={project.githubUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-6 py-3 bg-transparent hover:bg-red-500/10 text-white rounded-xl font-semibold transition-all hover:shadow-lg border-2 border-red-500/50 hover:border-red-500 hover:-translate-y-0.5 active:translate-y-0"
+								className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#082f49] hover:bg-[#0284c7] dark:bg-[#1a1a2e] dark:hover:bg-[#2a2a3e] text-white rounded-xl font-medium transition-all duration-200 hover:-translate-y-1 border border-sky-400/20 dark:border-red-500/30 shadow-lg"
 							>
 								<Github className="w-5 h-5" />
-								Source Code
+								<span>Source Code</span>
 							</a>
 						)}
 					</motion.div>
