@@ -1,8 +1,15 @@
 import { useCallback } from 'react';
 import { Particles } from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
+import { useTheme } from 'next-themes';
 
 const ParticlesContainer = () => {
+	const { resolvedTheme } = useTheme();
+
+	// Use darker colors for light theme so particles are visible on white background
+	const particleColor = resolvedTheme === 'light' ? '#0ea5e9' : '#e68e2e'; // Sky blue for light, Orange for dark
+	const linkColor = resolvedTheme === 'light' ? '#38bdf8' : '#f5d393';
+
 	// init
 	const particlesInit = useCallback(async (engine: any) => {
 		await loadFull(engine);
@@ -48,10 +55,10 @@ const ParticlesContainer = () => {
 				},
 				particles: {
 					color: {
-						value: '#e68e2e',
+						value: particleColor,
 					},
 					links: {
-						color: '#f5d393',
+						color: linkColor,
 						distance: 150,
 						enable: true,
 						opacity: 0.5,
