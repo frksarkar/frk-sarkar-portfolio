@@ -67,7 +67,7 @@ const Contact = () => {
 							<span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">connect.</span>{' '}
 						</h2>
 
-						<p className="text-gray-300/80 leading-relaxed font-light text-lg mb-8">
+						<p className="text-slate-600 dark:text-gray-300/80 leading-relaxed font-light text-lg mb-8">
 							I'm currently available for freelance work and new opportunities. Whether you have a project to discuss or just want to say hi, my inbox is open.
 						</p>
 
@@ -114,7 +114,7 @@ const Contact = () => {
 										onChange={handleChange}
 										placeholder="Full Name *"
 										required
-										className="w-full h-14 bg-white/50 dark:bg-black/30 border border-black/10 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500"
+										className="w-full h-14 bg-white dark:bg-black/30 border border-slate-200 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-50 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500"
 									/>
 								</div>
 
@@ -130,7 +130,7 @@ const Contact = () => {
 										onChange={handleChange}
 										placeholder="Email Address *"
 										required
-										className="w-full h-14 bg-white/50 dark:bg-black/30 border border-black/10 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500"
+										className="w-full h-14 bg-white dark:bg-black/30 border border-slate-200 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-50 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500"
 									/>
 								</div>
 							</div>
@@ -146,7 +146,7 @@ const Contact = () => {
 									value={formData.subject}
 									onChange={handleChange}
 									placeholder="Subject (Optional)"
-									className="w-full h-14 bg-white/50 dark:bg-black/30 border border-black/10 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500"
+									className="w-full h-14 bg-white dark:bg-black/30 border border-slate-200 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-50 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500"
 								/>
 							</div>
 
@@ -161,7 +161,7 @@ const Contact = () => {
 									onChange={handleChange}
 									placeholder="Tell me about your project..."
 									required
-									className="w-full h-40 bg-white/50 dark:bg-black/30 border border-black/10 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-500/5 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 pt-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500 resize-none"
+									className="w-full h-40 bg-white dark:bg-black/30 border border-slate-200 dark:border-white/10 focus:border-sky-400 dark:focus:border-red-400 focus:bg-sky-50 dark:focus:bg-red-500/5 text-slate-800 dark:text-white pl-12 pr-4 pt-4 rounded-xl outline-none transition-all duration-300 placeholder:text-slate-400 placeholder:dark:text-gray-500 resize-none"
 								></textarea>
 							</div>
 

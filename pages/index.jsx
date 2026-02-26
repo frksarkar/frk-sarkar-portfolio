@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-import ParticlesContainer from '../components/ParticlesContainer';
+import dynamic from 'next/dynamic';
+
+const ParticlesContainer = dynamic(() => import('../components/ParticlesContainer'), { ssr: false });
 import ProjectsBtn from '../components/ProjectsBtn';
 import Avatar from '../components/Avatar';
 
@@ -34,7 +36,7 @@ const Home = () => {
 						initial="hidden"
 						animate="show"
 						exit="hidden"
-						className="max-w-sm xl:max-w-xl text-gray-300/80 mb-10 xl:mb-16 leading-relaxed"
+						className="max-w-sm xl:max-w-xl text-slate-600 dark:text-gray-300/80 mb-10 xl:mb-16 leading-relaxed"
 					>
 						I build modern, responsive, and user-focused web applications using React, Next.js, and Node.js. Passionate about clean code, performance, and real-world
 						problem solving.

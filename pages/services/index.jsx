@@ -3,7 +3,9 @@ import { Layers } from 'lucide-react';
 
 import Bulb from '../../components/Bulb';
 import Circles from '../../components/Circles';
-import ServiceSlider from '../../components/ServiceSlider';
+import dynamic from 'next/dynamic';
+
+const ServiceSlider = dynamic(() => import('../../components/ServiceSlider'), { ssr: false });
 import { fadeIn } from '../../variants';
 
 export const serviceData = [];
@@ -50,7 +52,7 @@ const Services = () => {
 							initial="hidden"
 							animate="show"
 							exit="hidden"
-							className="text-gray-300/80 leading-relaxed font-light text-lg max-w-[450px] mx-auto lg:mx-0"
+							className="text-slate-600 dark:text-gray-300/80 leading-relaxed font-light text-lg max-w-[450px] mx-auto lg:mx-0"
 						>
 							I help businesses and startups build fast, responsive, and scalable web applications using modern technologies and clean development practices.
 						</motion.p>
@@ -59,7 +61,7 @@ const Services = () => {
 					{/* slider with glass container */}
 					<motion.div variants={fadeIn('left', 0.6)} initial="hidden" animate="show" exit="hidden" className="w-full xl:max-w-[65%] relative">
 						<div className="absolute -inset-4 bg-gradient-to-tr from-sky-500/10 to-blue-600/10 dark:from-red-500/10 dark:to-orange-600/10 blur-xl rounded-[40px] z-0 pointer-events-none" />
-						<div className="relative z-10 bg-white/5 dark:bg-[#131424]/40 backdrop-blur-md rounded-3xl p-4 sm:p-6 border border-white/10 dark:border-white/5 shadow-2xl">
+						<div className="relative z-10 bg-white/50 dark:bg-[#131424]/40 backdrop-blur-md rounded-3xl p-4 sm:p-6 border border-slate-200 dark:border-white/5 shadow-2xl">
 							<ServiceSlider />
 						</div>
 					</motion.div>

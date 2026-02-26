@@ -4,7 +4,9 @@ import { useState } from 'react';
 
 import Bulb from '../../components/Bulb';
 import Circles from '../../components/Circles';
-import WorkSlider from '../../components/WorkSlider';
+import dynamic from 'next/dynamic';
+
+const WorkSlider = dynamic(() => import('../../components/WorkSlider'), { ssr: false });
 import { fadeIn } from '../../variants';
 import ProjectModal from '../../components/ProjectModal';
 import { LayoutGrid } from 'lucide-react';
@@ -61,7 +63,7 @@ const Work = () => {
 							initial="hidden"
 							animate="show"
 							exit="hidden"
-							className="text-gray-300/80 leading-relaxed font-light text-lg max-w-[450px] mx-auto lg:mx-0"
+							className="text-slate-600 dark:text-gray-300/80 leading-relaxed font-light text-lg max-w-[450px] mx-auto lg:mx-0"
 						>
 							A curated collection of real-world projects where I applied modern web technologies to solve practical problems, build scalable applications, and
 							deliver premium user experiences.
@@ -71,7 +73,7 @@ const Work = () => {
 					{/* slider with glass container */}
 					<motion.div variants={fadeIn('left', 0.6)} initial="hidden" animate="show" exit="hidden" className="w-full xl:max-w-[65%] relative">
 						<div className="absolute -inset-4 bg-gradient-to-tr from-sky-500/10 to-blue-600/10 dark:from-red-500/10 dark:to-orange-600/10 blur-xl rounded-[40px] z-0 pointer-events-none" />
-						<div className="relative z-10 bg-white/5 dark:bg-[#131424]/40 backdrop-blur-md rounded-3xl p-4 sm:p-6 border border-white/10 dark:border-white/5 shadow-2xl">
+						<div className="relative z-10 bg-white/50 dark:bg-[#131424]/40 backdrop-blur-md rounded-3xl p-4 sm:p-6 border border-slate-200 dark:border-white/5 shadow-2xl">
 							<WorkSlider handleCardClick={handleCardClick} />
 						</div>
 					</motion.div>

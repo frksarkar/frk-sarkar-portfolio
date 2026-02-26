@@ -12,6 +12,7 @@ const ProjectsBtn = () => {
 					alt="rounded text"
 					width={141}
 					height={148}
+					priority={true}
 					className="animate-spin-slow w-full h-full max-w-[141px] max-h-[148px] pointer-events-none select-none invert dark:invert-0"
 				/>
 				<HiArrowRight className="absolute text-4xl text-slate-900 dark:text-white group-hover:translate-x-2 transition-all duration-300" aria-hidden />

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 
-import TestimonialSlider from '../../components/TestimonialSlider';
+import dynamic from 'next/dynamic';
+
+const TestimonialSlider = dynamic(() => import('../../components/TestimonialSlider'), { ssr: false });
 import { fadeIn } from '../../variants';
 
 const Testimonials = () => {

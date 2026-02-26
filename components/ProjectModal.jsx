@@ -44,7 +44,7 @@ export default function ProjectModal({ project, onClose }) {
 				animate={{ opacity: 1, scale: 1, y: 0 }}
 				exit={{ opacity: 0, scale: 0.9, y: 20 }}
 				transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-				className="relative w-full max-w-2xl max-h-[90vh] bg-[#0c4a6e] dark:bg-[#0f0f23] rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-sky-400/20 dark:border-red-500/20 transition-colors duration-300"
+				className="relative w-full max-w-2xl max-h-[90vh] bg-white dark:bg-[#0f0f23] rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-slate-200 dark:border-red-500/20 transition-colors duration-300"
 			>
 				{/* Network Background Effect */}
 				<div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -88,7 +88,7 @@ export default function ProjectModal({ project, onClose }) {
 							<Code2 className="w-24 h-24 text-sky-400/80 dark:text-red-400/80" />
 						</div>
 					)}
-					<div className="absolute inset-0 bg-gradient-to-t from-[#0c4a6e] dark:from-[#0f0f23] via-transparent to-transparent transition-colors duration-300" />
+					<div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0f0f23] via-transparent to-transparent transition-colors duration-300" />
 
 					{/* Title Overlay */}
 					<div className="absolute bottom-0 left-0 right-0 p-6">
@@ -109,7 +109,7 @@ export default function ProjectModal({ project, onClose }) {
 							<span className="w-1 h-6 bg-gradient-to-b from-sky-400 dark:from-red-500 to-sky-200 dark:to-orange-500 rounded-full" />
 							About Project
 						</h3>
-						<p className="text-white/80 dark:text-gray-400 leading-relaxed">{project.fullDescription}</p>
+						<p className="text-slate-600 dark:text-gray-400 leading-relaxed">{project.fullDescription}</p>
 					</motion.div>
 
 					{/* Features */}
@@ -126,10 +126,10 @@ export default function ProjectModal({ project, onClose }) {
 										initial={{ opacity: 0, x: -10 }}
 										animate={{ opacity: 1, x: 0 }}
 										transition={{ delay: 0.3 + index * 0.05 }}
-										className="flex items-start gap-2 text-white/80 dark:text-gray-400 group"
+										className="flex items-start gap-2 text-slate-600 dark:text-gray-400 group"
 									>
 										<CheckCircle2 className="w-5 h-5 text-sky-400 dark:text-red-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-										<span className="text-sm group-hover:text-white transition-colors">{feature}</span>
+										<span className="text-sm group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{feature}</span>
 									</motion.li>
 								))}
 							</ul>
@@ -150,10 +150,10 @@ export default function ProjectModal({ project, onClose }) {
 									animate={{ opacity: 1, scale: 1 }}
 									transition={{ delay: 0.4 + index * 0.05 }}
 									whileHover={{ scale: 1.05, y: -2 }}
-									className="flex items-center gap-2 px-4 py-2 bg-[#1a1a2e] rounded-xl border border-red-500/30 hover:border-red-500/60 transition-all cursor-default shadow-lg shadow-red-500/10 hover:shadow-red-500/20"
+									className="flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-[#1a1a2e] rounded-xl border border-slate-200 dark:border-red-500/30 hover:border-sky-300 dark:hover:border-red-500/60 transition-all cursor-default shadow-sm dark:shadow-lg dark:shadow-red-500/10 hover:shadow-md dark:hover:shadow-red-500/20"
 								>
 									<span className="text-xl">{getTechIcon(tech)}</span>
-									<span className="text-sm font-medium text-gray-300">{tech}</span>
+									<span className="text-sm font-medium text-slate-700 dark:text-gray-300">{tech}</span>
 								</motion.div>
 							))}
 						</div>
