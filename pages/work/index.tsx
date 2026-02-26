@@ -21,7 +21,7 @@ const Work = () => {
 	};
 
 	return (
-		<div className="min-h-screen xl:h-screen bg-lightPrimary dark:bg-primary/30 py-36 flex items-center transition-colors duration-300 relative">
+		<div className="min-h-screen xl:h-screen bg-lightPrimary dark:bg-primary/30 py-36 flex items-center transition-colors duration-300 relative overflow-hidden">
 			<Circles />
 
 			{/* Ambient background glow */}

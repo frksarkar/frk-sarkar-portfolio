@@ -88,7 +88,7 @@ const WorkSlider = ({ handleCardClick }) => {
 				clickable: true,
 			}}
 			modules={[Pagination]}
-			className="h-[560px] sm:h-[480px]"
+			className="h-[800px] sm:h-[480px]"
 		>
 			{workSlides.slides.map((slide, i) => (
 				<SwiperSlide key={i}>

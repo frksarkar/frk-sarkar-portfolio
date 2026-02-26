@@ -74,9 +74,9 @@ export default function ProjectModal({ project, onClose }: { project: any; onClo
 				{/* Close Button */}
 				<button
 					onClick={onClose}
-					className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/40 backdrop-blur-md hover:bg-white/20 transition-all duration-200 hover:rotate-90 border border-white/10"
+					className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/60 dark:bg-black/40 backdrop-blur-md hover:bg-white/90 dark:hover:bg-white/20 transition-all duration-200 hover:rotate-90 border border-slate-200 dark:border-white/10 shadow-sm"
 				>
-					<X className="w-5 h-5 text-gray-200 hover:text-white" />
+					<X className="w-5 h-5 text-slate-800 dark:text-gray-200 hover:text-black dark:hover:text-white" />
 				</button>
 
 				{/* Hero Image */}
@@ -97,7 +97,7 @@ export default function ProjectModal({ project, onClose }: { project: any; onClo
 								{project.name}
 								<Sparkles className="w-6 h-6 text-sky-400 dark:text-red-400 animate-pulse" />
 							</h2>
-							<p className="text-gray-300 text-lg">{project.shortDescription}</p>
+							<p className="text-slate-100 dark:text-gray-300 text-lg">{project.shortDescription}</p>
 						</motion.div>
 					</div>
 				</div>
@@ -168,15 +168,15 @@ export default function ProjectModal({ project, onClose }: { project: any; onClo
 					>
 						<div className="text-center">
 							<div className="text-2xl font-bold text-sky-400 dark:text-red-400">100%</div>
-							<div className="text-xs text-gray-400">Responsive</div>
+							<div className="text-xs text-slate-500 dark:text-gray-400">Responsive</div>
 						</div>
 						<div className="text-center border-x border-sky-500/20 dark:border-red-500/20">
 							<div className="text-2xl font-bold text-blue-400 dark:text-orange-400">A+</div>
-							<div className="text-xs text-gray-400">Performance</div>
+							<div className="text-xs text-slate-500 dark:text-gray-400">Performance</div>
 						</div>
 						<div className="text-center">
 							<div className="text-2xl font-bold text-sky-400 dark:text-red-400">SEO</div>
-							<div className="text-xs text-gray-400">Optimized</div>
+							<div className="text-xs text-slate-500 dark:text-gray-400">Optimized</div>
 						</div>
 					</motion.div>
 
@@ -203,7 +203,7 @@ export default function ProjectModal({ project, onClose }: { project: any; onClo
 								href={project.githubUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 dark:bg-[#1a1a2e] dark:hover:bg-[#2a2a3e] text-white rounded-xl font-medium transition-all duration-200 hover:-translate-y-1 border border-sky-400/20 dark:border-red-500/30 shadow-lg"
+								className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 hover:bg-slate-200 dark:bg-[#1a1a2e] dark:hover:bg-[#2a2a3e] text-slate-800 dark:text-white rounded-xl font-medium transition-all duration-200 hover:-translate-y-1 border border-slate-300 dark:border-red-500/30 shadow-sm dark:shadow-lg"
 							>
 								<Github className="w-5 h-5" />
 								<span>Source Code</span>
