@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter();
 
 	return (
-		<ThemeProvider attribute="class" defaultTheme="dark">
+		<ThemeProvider attribute="class" defaultTheme="light">
 			<Layout>
 				<AnimatePresence mode="wait">
 					<motion.div key={router.route} className="flex-1 w-full min-h-screen flex flex-col">
