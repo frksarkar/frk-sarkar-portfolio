@@ -126,7 +126,7 @@ const About = () => {
 						variants={fadeIn('right', 0.4)}
 						initial="hidden"
 						animate="show"
-						className="text-gray-300/80 leading-relaxed font-light text-lg max-w-[500px] mx-auto xl:mx-0 mb-8 px-2 xl:px-0"
+						className="text-slate-600 dark:text-gray-300/80 leading-relaxed font-light text-lg max-w-[500px] mx-auto xl:mx-0 mb-8 px-2 xl:px-0"
 					>
 						I’m a passionate Full-Stack Web Developer focused on building responsive, scalable, and user-friendly web applications using modern technologies. I enjoy
 						solving real-world problems and continuously improving my skills through hands-on projects.
@@ -145,7 +145,7 @@ const About = () => {
 								<div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500 mb-2 drop-shadow-sm group-hover:scale-110 transition-transform duration-300">
 									<CountUp start={0} end={15} duration={5} />+
 								</div>
-								<div className="text-xs uppercase tracking-[1px] leading-[1.4] text-gray-400 font-medium">Projects Built</div>
+								<div className="text-xs uppercase tracking-[1px] leading-[1.4] text-slate-500 dark:text-gray-400 font-medium">Projects Built</div>
 								<div className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-12 bg-gray-600/30" />
 							</div>
 
@@ -154,7 +154,7 @@ const About = () => {
 								<div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500 mb-2 drop-shadow-sm group-hover:scale-110 transition-transform duration-300">
 									<CountUp start={0} end={8} duration={5} />+
 								</div>
-								<div className="text-xs uppercase tracking-[1px] leading-[1.4] text-gray-400 font-medium">Tech Used</div>
+								<div className="text-xs uppercase tracking-[1px] leading-[1.4] text-slate-500 dark:text-gray-400 font-medium">Tech Used</div>
 								<div className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-12 bg-gray-600/30" />
 							</div>
 
@@ -163,7 +163,7 @@ const About = () => {
 								<div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500 mb-2 drop-shadow-sm group-hover:scale-110 transition-transform duration-300">
 									<CountUp start={0} end={1} duration={5} />+
 								</div>
-								<div className="text-xs uppercase tracking-[1px] leading-[1.4] text-gray-400 font-medium">Years Exp.</div>
+								<div className="text-xs uppercase tracking-[1px] leading-[1.4] text-slate-500 dark:text-gray-400 font-medium">Years Exp.</div>
 								<div className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-12 bg-gray-600/30 xl:hidden" />
 							</div>
 
@@ -172,7 +172,7 @@ const About = () => {
 								<div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500 mb-2 drop-shadow-sm group-hover:scale-110 transition-transform duration-300">
 									∞
 								</div>
-								<div className="text-xs uppercase tracking-[1px] leading-[1.4] text-gray-400 font-medium">Learning</div>
+								<div className="text-xs uppercase tracking-[1px] leading-[1.4] text-slate-500 dark:text-gray-400 font-medium">Learning</div>
 							</div>
 						</div>
 					</motion.div>

@@ -19,34 +19,31 @@ const Transition = () => {
 	return (
 		<>
 			<motion.div
-				role="status"
 				className="fixed top-0 bottom-0 right-full w-screen h-screen z-[100] bg-slate-200 dark:bg-[#2e2257]"
 				variants={transitionVariants}
 				initial="initial"
 				animate="animate"
 				exit="exit"
 				transition={{ delay: 0.2, duration: 0.4, ease: 'easeInOut' }}
-				aria-hidden
+				aria-hidden={true}
 			/>
 			<motion.div
-				role="status"
 				className="fixed top-0 bottom-0 right-full w-screen h-screen z-[90] bg-slate-300 dark:bg-[#3b2d71]"
 				variants={transitionVariants}
 				initial="initial"
 				animate="animate"
 				exit="exit"
 				transition={{ delay: 0.4, duration: 0.4, ease: 'easeInOut' }}
-				aria-hidden
+				aria-hidden={true}
 			/>
 			<motion.div
-				role="status"
 				className="fixed top-0 bottom-0 right-full w-screen h-screen z-[80] bg-white dark:bg-[#4b3792]"
 				variants={transitionVariants}
 				initial="initial"
 				animate="animate"
 				exit="exit"
 				transition={{ delay: 0.6, duration: 0.4, ease: 'easeInOut' }}
-				aria-hidden
+				aria-hidden={true}
 			/>
 		</>
 	);

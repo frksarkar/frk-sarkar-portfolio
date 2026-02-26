@@ -61,7 +61,7 @@ const TestimonialSlider = () => {
 						<div className="flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-black/10 dark:xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20">
 							{/* quote icon */}
 							<div className="mb-4">
-								<FaQuoteLeft className="text-4xl xl:text-6xl text-slate-200 dark:text-white/20 mx-auto md:mx-0" aria-aria-hidden />
+								<FaQuoteLeft className="text-4xl xl:text-6xl text-slate-200 dark:text-white/20 mx-auto md:mx-0" aria-hidden="true" />
 							</div>
 
 							{/* message */}

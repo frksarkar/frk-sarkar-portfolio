@@ -18,7 +18,7 @@ const Layout = ({
 	description = 'Omar Faruk Sarkar is a Full-stack web developer who builds modern, responsive, and user-focused web applications.',
 }) => {
 	return (
-		<main className={`page bg-site text-slate-800 dark:text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
+		<main className={`page bg-lightPrimary dark:bg-site text-slate-800 dark:text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
 			{/* metadata */}
 			<Head>
 				<title>{title}</title>

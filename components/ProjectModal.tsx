@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { X, ExternalLink, Github, Code2, CheckCircle2, Sparkles, Eye } from 'lucide-react';
 import Image from 'next/image';
 
-export default function ProjectModal({ project, onClose }) {
-	const getTechIcon = (tech) => {
+export default function ProjectModal({ project, onClose }: { project: any; onClose: () => void }) {
+	const getTechIcon = (tech: string) => {
 		const icons = {
 			React: '⚛️',
 			'Next.js': '▲',

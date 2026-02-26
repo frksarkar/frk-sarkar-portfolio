@@ -15,24 +15,24 @@ const Contact = () => {
 		message: '',
 	});
 
-	const handleChange = (e) => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		setFormData((prev) => ({
 			...prev,
 			[e.target.name]: e.target.value,
 		}));
 	};
 
-	const handleSubmit = (event) => {
+	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		setStatus({ ...status, submitting: true });
 
-		const myForm = event.target;
+		const myForm = event.currentTarget;
 		const submitData = new FormData(myForm);
 
 		fetch('/__forms.html', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: new URLSearchParams(submitData).toString(),
+			body: new URLSearchParams(submitData as any).toString(),
 		})
 			.then((res) => {
 				if (res.status === 200) {
@@ -63,12 +63,12 @@ const Contact = () => {
 						</div>
 
 						<h2 className="text-[40px] leading-tight md:text-[54px] md:leading-[1.2] font-bold text-slate-900 dark:text-white mb-6">
-							Let's{' '}
+							Let&apos;s{' '}
 							<span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 dark:from-red-400 dark:to-orange-500">connect.</span>{' '}
 						</h2>
 
 						<p className="text-slate-600 dark:text-gray-300/80 leading-relaxed font-light text-lg mb-8">
-							I'm currently available for freelance work and new opportunities. Whether you have a project to discuss or just want to say hi, my inbox is open.
+							I&apos;m currently available for freelance work and new opportunities. Whether you have a project to discuss or just want to say hi, my inbox is open.
 						</p>
 
 						{/* Small decorative elements */}
@@ -84,7 +84,7 @@ const Contact = () => {
 									<MessageSquare className="w-4 h-4 text-gray-400" />
 								</div>
 							</div>
-							<p className="text-sm text-gray-400 font-medium">Fast & reliable communication.</p>
+							<p className="text-sm text-slate-500 dark:text-gray-400 font-medium">Fast & reliable communication.</p>
 						</div>
 					</motion.div>
 

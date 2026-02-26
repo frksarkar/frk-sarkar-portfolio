@@ -8,7 +8,9 @@ import '../styles/globals.css';
 
 import { ThemeProvider } from 'next-themes';
 
-function MyApp({ Component, pageProps }) {
+import type { AppProps } from 'next/app';
+
+function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter();
 
 	return (
