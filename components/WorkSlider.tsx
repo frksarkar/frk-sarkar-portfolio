@@ -42,14 +42,14 @@ const workSlides = {
 				{
 					id: 3,
 					name: 'Twitter Clone',
-					path: '/twitter-clone.png',
+					path: '/twitter-clone-new.png',
 					shortDescription: 'Full-stack Social Media Application',
 					fullDescription:
 						'A full-stack Twitter clone application built with Node.js, Express, and React.js. Features secure user authentication, MongoDB integration, real-time messaging with Socket.io, file uploads, and a responsive Tailwind CSS interface.',
 					techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Tailwind'],
 					liveUrl: '',
 					githubUrl: 'https://github.com/frksarkar/twitter-clone',
-					image: '/twitter-clone.png',
+					image: '/twitter-clone-new.png',
 					features: ['Real-Time Messaging (Socket.io)', 'User Authentication (bcrypt)', 'File Uploads (Multer)', 'State Management (Zustand)'],
 				},
 				{
