@@ -41,28 +41,29 @@ const workSlides = {
 				},
 				{
 					id: 3,
-					name: 'AI Image Generator',
-					path: '/thumb3.jpg',
-					shortDescription: 'Generate images using Stable Diffusion API',
+					name: 'Twitter Clone',
+					path: '/twitter-clone.png',
+					shortDescription: 'Full-stack Social Media Application',
 					fullDescription:
-						'An AI-powered image generation platform that leverages Stable Diffusion models. Users can create custom images from text prompts, save their favorites, and download high-resolution outputs. Includes a gallery system and prompt history.',
-					techStack: ['Next.js', 'Python', 'FastAPI', 'AWS', 'PostgreSQL'],
-					liveUrl: 'https://ai-image-gen.vercel.app',
-					githubUrl: 'https://github.com/frksarkar/AI-Image-Generator',
-					features: ['Text-to-image generation', 'Prompt history & favorites', 'High-res downloads', 'Gallery management', 'API rate limiting'],
+						'A full-stack Twitter clone application built with Node.js, Express, and React.js. Features secure user authentication, MongoDB integration, real-time messaging with Socket.io, file uploads, and a responsive Tailwind CSS interface.',
+					techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Tailwind'],
+					liveUrl: '',
+					githubUrl: 'https://github.com/frksarkar/twitter-clone',
+					image: '/twitter-clone.png',
+					features: ['Real-Time Messaging (Socket.io)', 'User Authentication (bcrypt)', 'File Uploads (Multer)', 'State Management (Zustand)'],
 				},
 				{
 					id: 4,
-					name: 'E-Commerce Dashboard',
-					path: '/thumb4.jpg',
-					shortDescription: 'Modern analytics dashboard with real-time data visualization',
+					name: 'School Management API',
+					path: '/school-api-banner.png',
+					shortDescription: 'Robust REST API for School Administration',
 					fullDescription:
-						'powerful analytics dashboard with real-time data visualization and real-time analytics with WebSocket connections for live updates and includes role-based access control for team members.',
-					techStack: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL', 'Prisma'],
-					liveUrl: 'https://dashboard-demo.vercel.app',
-					githubUrl: 'https://github.com/frksarkar/Elite-Store',
-					image: '/projects/dashboard.jpg',
-					features: ['Real-time analytics with WebSocket', 'Dark/Light mode toggle', 'Responsive data tables', 'Export to PDF/Excel', 'Role-based authentication'],
+						'A comprehensive backend REST API built with Node.js, Express, and MongoDB for managing school administration. Handles academic years, class levels, teachers, students, and exam results efficiently.',
+					techStack: ['Node.js', 'Express', 'MongoDB', 'REST API', 'JWT'],
+					liveUrl: '',
+					githubUrl: 'https://github.com/frksarkar/School_REST_Api',
+					image: '/school-api-banner.png',
+					features: ['Extensive RESTful endpoints', 'MongoDB data modeling', 'JWT Authentication', 'Complete school domain management'],
 				},
 			],
 		},
@@ -96,10 +97,10 @@ const WorkSlider = ({ handleCardClick }) => {
 					<div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:grid-rows-2 gap-4">
 						{slide.images.map((image, imageI) => (
 							<React.Fragment key={imageI}>
-								<div className="relative rounded-lg overflow-hidden flex items-center justify-center group" key={imageI}>
-									<div className="flex items-center justify-center relative overflow-hidden group">
+								<div className="relative rounded-lg overflow-hidden flex items-center justify-center group w-full aspect-[4/3] sm:aspect-video" key={imageI}>
+									<div className="relative overflow-hidden w-full h-full flex items-center justify-center group">
 										{/* image */}
-										<Image src={image.path} alt={image.name} width={500} height={300} />
+										<Image src={image.path} alt={image.name} width={500} height={300} className="object-cover w-full h-full" />
 
 										{/* overlay gradient */}
 										<div
