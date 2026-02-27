@@ -2,7 +2,12 @@
 
 Welcome to the repository of my personal portfolio website! This project is a modern, interactive, and highly responsive web application designed to showcase my skills, experience, and the latest projects I've built as a Full-Stack Developer.
 
-![Portfolio Preview](./public/preview.png)
+### Live Previews
+<p align="center">
+  <img src="./public/readme-home.png" alt="Home Page Preview" width="48%">
+  &nbsp;
+  <img src="./public/readme-work.png" alt="Work Page Preview" width="48%">
+</p>
 
 ## 🌐 Live Demo
 Check out the live website here: [**[Insert Live Link Here]**]()
