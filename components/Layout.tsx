@@ -12,11 +12,24 @@ const sora = Sora({
 	weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
 });
 
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+
 const Layout = ({
 	children,
 	title = 'frk-sarkar | Portfolio',
 	description = 'Omar Faruk Sarkar is a Full-stack web developer who builds modern, responsive, and user-focused web applications.',
 }) => {
+	const { resolvedTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	// Determine the correct favicon based on the theme
+	const faviconPath = mounted && resolvedTheme === 'light' ? '/favicon-white.ico' : '/favicon.ico';
+
 	return (
 		<main className={`page bg-lightPrimary dark:bg-site text-slate-800 dark:text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
 			{/* metadata */}
@@ -26,6 +39,7 @@ const Layout = ({
 				<meta name="keywords" content="react, next, nextjs, html, css, javascript, js, modern-ui, modern-ux, portfolio, framer-motion, 3d-website, particle-effect" />
 				<meta name="author" content="Omar Faruk Sarkar" />
 				<meta name="theme-color" content="#f13024" />
+				<link rel="icon" href={faviconPath} />
 			</Head>
 
 			<TopLeftImg />
