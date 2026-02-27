@@ -10,7 +10,7 @@ Welcome to the repository of my personal portfolio website! This project is a mo
 </p>
 
 ## 🌐 Live Demo
-Check out the live website here: [**[Insert Live Link Here]**]()
+Check out the live website here: [**frk-sarkar.vercel.app**](https://frk-sarkar.vercel.app/)
 
 ---
 
